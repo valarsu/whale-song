@@ -10,7 +10,6 @@ let b
 setTimeout(() => {
 
   b = c + 1
-  console.log(b)
 
 }, 0)
 

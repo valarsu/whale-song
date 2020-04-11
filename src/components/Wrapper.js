@@ -15,7 +15,7 @@ import { deepOrange } from '@material-ui/core/colors';
 import Avatar from '@material-ui/core/Avatar';
 import MailIcon from '@material-ui/icons/Mail';
 
-import { inject, observer } from "mobx-react";
+// import { inject, observer } from "mobx-react";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -132,7 +132,7 @@ export default function Wrapper() {
           </div>
         </Toolbar>
       </AppBar>
-      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+      <Drawer open={state.left} onClick={toggleDrawer('left', false)}>
         <MainMenu />
         <div>盒盒盒</div>
       </Drawer>

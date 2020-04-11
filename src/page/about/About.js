@@ -10,7 +10,6 @@ class About extends Component {
 
   render() {
     const {AppStore} = this.props
-    console.log(new AppStore().drawerSwitch.left = true)
     return (
       <div>
         <h2>About</h2>

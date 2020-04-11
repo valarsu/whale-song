@@ -32,9 +32,7 @@ export default function MainMenu() {
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemLink to="/about">
-              <ListItemText primary={text} />
-            </ListItemLink>
+            <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
