@@ -1,20 +1,16 @@
 import React from 'react';
 import MainMenu from './Menu'
+import Breadcrumbs from './Breadcrumbs'
 
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import { deepOrange } from '@material-ui/core/colors';
 import Avatar from '@material-ui/core/Avatar';
-import MailIcon from '@material-ui/icons/Mail';
-
+import { deepOrange } from '@material-ui/core/colors';
+import MenuIcon from '@material-ui/icons/Menu';
 // import { inject, observer } from "mobx-react";
 
 const useStyles = makeStyles(theme => ({
@@ -25,41 +21,6 @@ const useStyles = makeStyles(theme => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    width: theme.spacing(7),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200,
     },
   },
   sectionDesktop: {
@@ -106,28 +67,10 @@ export default function Wrapper() {
           <Typography className={classes.title} variant="h6" noWrap>
             盒盒盒今天
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="搜索"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
             <IconButton edge="end">
-              <Avatar className={classes.orange}>H</Avatar>
+              <Avatar className={classes.orange}>盒</Avatar>
             </IconButton>
           </div>
         </Toolbar>
@@ -136,6 +79,7 @@ export default function Wrapper() {
         <MainMenu />
         <div>盒盒盒</div>
       </Drawer>
+      <Breadcrumbs></Breadcrumbs>
     </div>
   );
 }

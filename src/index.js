@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from './page/Routes'
+import RouteView from './router/RouteView'
 import { Provider } from "mobx-react"
 import store from './store'
 import 'typeface-roboto';
@@ -15,6 +15,6 @@ setTimeout(() => {
 
 ReactDOM.render((
   <Provider {...store}>
-    <Routes />
+    <RouteView />
   </Provider>
 ), document.getElementById('root'));
