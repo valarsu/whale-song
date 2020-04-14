@@ -12,6 +12,7 @@ setTimeout(() => {
   b = c + 1
 
 }, 0)
+console.log(b)
 
 ReactDOM.render((
   <Provider {...store}>
