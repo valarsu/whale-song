@@ -1,6 +1,6 @@
 import React from 'react';
 import MainMenu from './Menu'
-import Breadcrumbs from './Breadcrumbs'
+// import Breadcrumbs from './Breadcrumbs'
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -79,7 +79,7 @@ export default function Wrapper() {
         <MainMenu />
         <div>盒盒盒</div>
       </Drawer>
-      <Breadcrumbs></Breadcrumbs>
+      {/* <Breadcrumbs></Breadcrumbs> */}
     </div>
   );
 }

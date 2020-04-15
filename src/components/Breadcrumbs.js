@@ -26,7 +26,7 @@ export default function RouterBreadcrumbs() {
         breadcrumbNameMap[item.path] = item.name
       } else {
           item.children.forEach(subItem => {
-            breadcrumbNameMap[subItem.path] = subItem.name
+            breadcrumbNameMap[item.path + '/' + subItem.path] = subItem.name
           })
       }
   })
@@ -35,7 +35,7 @@ export default function RouterBreadcrumbs() {
     <div className={classes.root}>
         <Route>
           {({ location }) => {
-            const pathnames = location.pathname.split('/').filter((x) => x);
+            const pathnames = location.pathname.split('/').filter(x => x);
             return (
               <Breadcrumbs aria-label="breadcrumb">
                 <LinkRouter color="inherit" to="/">
@@ -44,6 +44,7 @@ export default function RouterBreadcrumbs() {
                 {pathnames.map((value, index) => {
                   const last = index === pathnames.length - 1;
                   const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+                  console.log(to)
 
                   return last ? (
                     <Typography color="textPrimary" key={to}>

@@ -16,9 +16,9 @@ export default [
         path: '/articles',
         name: 'articles',
         children: [{
-            path: '/list',
+            path: 'list',
             name: 'articlesList',
-            component: ArticlesList
+            component: ArticlesList,
         }]
     }
 ]
