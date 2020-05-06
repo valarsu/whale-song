@@ -1,24 +1,16 @@
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import App from './../page/App';
 import About from './../page/about/About'
-import ArticlesList from './../page/articles/List'
-export default [
-    {
-        path: '/',
-        name: 'home',
-        component: App
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: About
-    },
-    {
-        path: '/articles',
-        name: 'articles',
-        children: [{
-            path: 'list',
-            name: 'articlesList',
-            component: ArticlesList,
-        }]
-    }
-]
+import Articles from './../page/articles'
+export default function Routers() {
+    return (
+        <div>
+            <Route path="/" component={App} />
+            <Switch>
+                <Route path="/about" component={About} />
+                <Route path="/articles" component={Articles} />
+            </Switch>
+        </div>
+    )
+}

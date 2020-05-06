@@ -30,7 +30,6 @@ export default function List() {
   return (
     <div className={classes.listWrapper}>
       <div className={classes.left}>
-        
       </div>
       <div className={classes.right}>
         {
