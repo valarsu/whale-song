@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainMenu from './Menu'
 // import Breadcrumbs from './Breadcrumbs'
 
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Wrapper() {
   const classes = useStyles();
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,

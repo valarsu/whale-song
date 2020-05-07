@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useParams} from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './../../components/articles/CodeBlock'
-
+import Editor from './../../components/articles/Editor'
 export default function Detail() {
   const { articleId } = useParams()
   console.log(articleId)
@@ -176,9 +176,14 @@ export default function Detail() {
   - [Webpack 模块打包原理](https://juejin.im/post/5c94a2f36fb9a070fc623df4)
   - [浏览器加载 CommonJS 模块的原理与实现](https://www.ruanyifeng.com/blog/2015/05/commonjs-in-browser.html)  
   `
+  const [markdownSrc, setMarkdownSrc] = useState(input)
+  const handleMarkdownChage = function (evt) {
+    setMarkdownSrc(evt.target.value)
+  }
   return (
     <div>
-      <ReactMarkdown source={input} renderers={{code: CodeBlock}}></ReactMarkdown>
+      <Editor value={markdownSrc} onChange={handleMarkdownChage} />
+      <ReactMarkdown source={markdownSrc} renderers={{code: CodeBlock}}></ReactMarkdown>
     </div>
   )
 }
