@@ -23,10 +23,6 @@ const useStyles = makeStyles({
 })
 export default function List() {
   const classes = useStyles()
-
-  // constructor(props) {
-  //   super(props)
-  // }
   return (
     <div className={classes.listWrapper}>
       <div className={classes.left}>
@@ -34,7 +30,7 @@ export default function List() {
       <div className={classes.right}>
         {
           Lists.map((item, key) => {
-            return (<ListItem key={key}></ListItem>)
+            return (<ListItem key={key} articleId={item}></ListItem>)
           })
         }
       </div>

@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useHistory } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -18,11 +19,15 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ListItem() {
+export default function ListItem(props) {
+  const history = useHistory()
   const classes = useStyles();
-
+  const toDetail = (articleId) => () => {
+    console.log(articleId)
+    history.push(`/articles/${articleId}`)
+  }
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={toDetail(props.articleId)}>
       <CardActionArea>
         <CardMedia
           className={classes.media}

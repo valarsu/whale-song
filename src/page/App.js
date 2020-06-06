@@ -5,7 +5,9 @@ import Wrapper from '../components/Wrapper'
 export default function App() {
   return (
     <React.Fragment>
-      <Wrapper />
+      <div className="App">
+        <Wrapper />
+      </div>
     </React.Fragment>
   )
 }

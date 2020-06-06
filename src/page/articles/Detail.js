@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
-import {useParams} from 'react-router-dom'
+// import {useParams} from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './../../components/articles/CodeBlock'
 import Editor from './../../components/articles/Editor'
+import { makeStyles } from '@material-ui/core'
+
+const useStyles = makeStyles({
+    wrapper: {
+        display: 'flex'
+    },
+    editor: {
+        flex: 1
+    },
+    markdown: {
+        flex: 1
+    }
+})
 export default function Detail() {
-  const { articleId } = useParams()
-  console.log(articleId)
+//   const { articleId } = useParams()
+  const classes = useStyles()
   const input = `## Babel对ES6 Module的编译
 
   说白了一句话，就是将\`ES6 Module\`编译为\`commonJS\`规范
@@ -181,9 +194,9 @@ export default function Detail() {
     setMarkdownSrc(evt.target.value)
   }
   return (
-    <div>
-      <Editor value={markdownSrc} onChange={handleMarkdownChage} />
-      <ReactMarkdown source={markdownSrc} renderers={{code: CodeBlock}}></ReactMarkdown>
+    <div className={classes.wrapper}>
+      <Editor className={classes.editor} value={markdownSrc} onChange={handleMarkdownChage} />
+      <ReactMarkdown className={classes.markdown} source={markdownSrc} renderers={{code: CodeBlock}}></ReactMarkdown>
     </div>
   )
 }
