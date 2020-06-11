@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import Routers from './Routers'
+import Routers from './routers'
 export default function RouterView() {
   return (
     <BrowserRouter>
